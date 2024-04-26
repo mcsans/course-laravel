@@ -1,6 +1,7 @@
-1. di .env setup database
-2. jalan server :
-   $ php artisan serve
+1. setup database di file .env
+2. jalankan server : $ php artisan serve
 
-3. membuat model & migrasinya (mahasiswa)
-   $ php artisan make:model Mahasiswa -mcr
+3. membuat model & migrasinya (mahasiswa) : $ php artisan make:model Mahasiswa -mcr
+   -- yg pertama di setup migration (lengkap field table / schema)
+   -- run migration fresh : $ php artisan migrate:fresh --seed
+   -- konfigurasi fillable/guarded di model
