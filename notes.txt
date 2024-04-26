@@ -1,0 +1,6 @@
+1. di .env setup database
+2. jalan server :
+   $ php artisan serve
+
+3. membuat model & migrasinya (mahasiswa)
+   $ php artisan make:model Mahasiswa -mcr
