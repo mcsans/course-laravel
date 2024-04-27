@@ -88,6 +88,10 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
-        //
+        // Mahasiswa::where('id', $mahasiswa->id)->delete();
+
+        $mahasiswa->delete();
+
+        return redirect()->route('mahasiswa.index');
     }
 }

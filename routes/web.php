@@ -13,6 +13,8 @@ Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasisw
 Route::get('/mahasiswa/{mahasiswa}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit'); // view create
 Route::put('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'update'])->name('mahasiswa.update'); // view store
 
+Route::delete('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy'); // view delete
+
 
 // ==========================================================================================
 

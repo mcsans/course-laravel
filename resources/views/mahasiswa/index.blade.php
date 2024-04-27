@@ -34,7 +34,11 @@
                         <a href="{{ route('mahasiswa.edit', ['mahasiswa' => $mahasiswa->id]) }}">
                             <button class="btn btn-sm btn-success">update</button>
                         </a>
-                        <button class="btn btn-sm btn-danger">delete</button>
+                        <form action="{{ route('mahasiswa.destroy', ['mahasiswa' => $mahasiswa->id]) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                            <button class="btn btn-sm btn-danger" onclick="return confirm('are you sure?')">delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
