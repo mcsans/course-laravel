@@ -9,7 +9,9 @@
   <body>
 
     <div class="container mt-5">
-        <button class="btn btn-dark mb-3">Tambah Data</button>
+        <a href="{{ route('mahasiswa.create') }}">
+          <button class="btn btn-dark mb-3">Tambah Data</button>
+        </a>
         <table class="table">
             <thead>
               <tr>

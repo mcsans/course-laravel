@@ -25,7 +25,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('mahasiswa.create');
     }
 
     /**
@@ -33,7 +33,15 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nim' => 'required',
+            'name' => 'required',
+            'jurusan' => 'required|min:8',
+        ]);
+
+        Mahasiswa::create($validated);
+
+        return redirect()->route('mahasiswa.index');
     }
 
     /**

@@ -5,7 +5,10 @@ use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 
 // MVC CRUD
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index'); // read all
+
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create'); // view create
+Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store'); // view store
 
 
 // ==========================================================================================

@@ -5,3 +5,7 @@
    -- yg pertama di setup migration (lengkap field table / schema)
    -- run migration fresh : $ php artisan migrate:fresh --seed
    -- konfigurasi fillable/guarded di model
+
+4. MVC CRUD
+   --1. set routing
+   --2. set controller -> return view dan buat dlu viewnya : $ php artisan make:view mahasiswa/create
