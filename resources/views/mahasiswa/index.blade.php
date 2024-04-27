@@ -31,7 +31,9 @@
                     <td>{{ $mahasiswa->jurusan }}</td>
                     <td>
                         <button class="btn btn-sm btn-primary">view</button>
-                        <button class="btn btn-sm btn-success">update</button>
+                        <a href="{{ route('mahasiswa.edit', ['mahasiswa' => $mahasiswa->id]) }}">
+                            <button class="btn btn-sm btn-success">update</button>
+                        </a>
                         <button class="btn btn-sm btn-danger">delete</button>
                     </td>
                 </tr>

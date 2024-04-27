@@ -34,7 +34,7 @@ class MahasiswaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nim' => 'required',
+            'nim' => 'required|unique:mahasiswas,nim',
             'name' => 'required',
             'jurusan' => 'required|min:8',
         ]);
@@ -57,7 +57,9 @@ class MahasiswaController extends Controller
      */
     public function edit(Mahasiswa $mahasiswa)
     {
-        //
+        return view('mahasiswa.edit', [
+            'mahasiswa' => $mahasiswa
+        ]);
     }
 
     /**
@@ -65,7 +67,20 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, Mahasiswa $mahasiswa)
     {
-        //
+        $validated = $request->validate([
+            'nim' => "required|unique:mahasiswas,nim,$mahasiswa->id",
+            'name' => 'required',
+            'jurusan' => 'required|min:8',
+        ]);
+
+        // Mahasiswa::where('id', $mahasiswa->id)->update($validated);
+
+        $mahasiswa->nim = $validated['nim'];
+        $mahasiswa->name = $validated['name'];
+        $mahasiswa->jurusan = $validated['jurusan'];
+        $mahasiswa->save();
+
+        return redirect()->route('mahasiswa.index');
     }
 
     /**
