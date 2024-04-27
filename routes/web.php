@@ -5,15 +5,18 @@ use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\Route;
 
 // MVC CRUD
-Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index'); // read all
 
-Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create'); // view create
-Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store'); // view store
+Route::resource('mahasiswa', MahasiswaController::class);
 
-Route::get('/mahasiswa/{mahasiswa}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit'); // view create
-Route::put('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'update'])->name('mahasiswa.update'); // view store
+// Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index'); // read all
 
-Route::delete('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy'); // view delete
+// Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create'); // view create
+// Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store'); // view store
+
+// Route::get('/mahasiswa/{mahasiswa}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit'); // view create
+// Route::put('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'update'])->name('mahasiswa.update'); // view store
+
+// Route::delete('/mahasiswa/{mahasiswa}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy'); // view delete
 
 
 // ==========================================================================================

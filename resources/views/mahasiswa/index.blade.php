@@ -9,9 +9,17 @@
   <body>
 
     <div class="container mt-5">
+
+        @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+        @endif
+
         <a href="{{ route('mahasiswa.create') }}">
           <button class="btn btn-dark mb-3">Tambah Data</button>
         </a>
+
         <table class="table">
             <thead>
               <tr>

@@ -41,7 +41,7 @@ class MahasiswaController extends Controller
 
         Mahasiswa::create($validated);
 
-        return redirect()->route('mahasiswa.index');
+        return redirect()->route('mahasiswa.index')->with('success', 'Data Created Successfully!');
     }
 
     /**
@@ -80,7 +80,7 @@ class MahasiswaController extends Controller
         $mahasiswa->jurusan = $validated['jurusan'];
         $mahasiswa->save();
 
-        return redirect()->route('mahasiswa.index');
+        return redirect()->route('mahasiswa.index')->with('success', 'Data Updated Successfully!');
     }
 
     /**
@@ -92,6 +92,6 @@ class MahasiswaController extends Controller
 
         $mahasiswa->delete();
 
-        return redirect()->route('mahasiswa.index');
+        return redirect()->route('mahasiswa.index')->with('success', 'Data Deleted Successfully!');
     }
 }
