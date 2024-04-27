@@ -6,7 +6,15 @@ use Illuminate\Support\Facades\Route;
 
 // MVC CRUD
 
+Route::get('/', function(){
+    return view('home.index');
+})->name('home.index');
+
 Route::resource('mahasiswa', MahasiswaController::class);
+
+Route::get('/book', function(){
+    return view('book.index');
+})->name('book.index');
 
 // Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index'); // read all
 
